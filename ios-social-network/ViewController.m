@@ -23,9 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self configureTweetTextView: self.tweetTextView];
-    [self configureTweetTextView: self.facebookTextView];
-    [self configureTweetTextView: self.moreTextView];
+    [self configureTweetTextView: self.tweetTextView color1:1.0 color2:1.0 color3:0.9];
+    [self configureTweetTextView: self.facebookTextView color1:1.0 color2:0.9 color3:1.0];
+    [self configureTweetTextView: self.moreTextView color1:0.9 color2:1.0 color3:1.0];
 }
 
 - (void) showAlertMessage: (NSString *) myMessage {
@@ -59,7 +59,7 @@
 - (IBAction)postToFacebook:(id)sender {
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
         SLComposeViewController *facebookVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-        [facebookVC setInitialText:self.tweetTextView.text];
+        [facebookVC setInitialText:self.facebookTextView.text];
         [self presentViewController:facebookVC animated:YES completion:nil];
         
     } else {
@@ -67,7 +67,7 @@
     }
 }
 - (IBAction)postMore:(id)sender {
-    UIActivityViewController *moreVC = [[UIActivityViewController alloc] initWithActivityItems:@[self.tweetTextView.text] applicationActivities:nil];
+    UIActivityViewController *moreVC = [[UIActivityViewController alloc] initWithActivityItems:@[self.moreTextView.text] applicationActivities:nil];
     [self presentViewController:moreVC animated:YES completion:nil];
 }
 - (IBAction)doNothing:(id)sender {
@@ -79,8 +79,8 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
-- (void) configureTweetTextView: (UITextView *) textView {
-    textView.layer.backgroundColor = [UIColor colorWithRed: 1.0 green:1.0 blue:0.9 alpha:1.0].CGColor;
+- (void) configureTweetTextView: (UITextView *) textView color1:(float)color1 color2: (float)color2 color3:(float)color3{
+    textView.layer.backgroundColor = [UIColor colorWithRed: color1 green:color2 blue:color3 alpha:1.0].CGColor;
     textView.layer.cornerRadius = 10.0;
     textView.layer.borderColor = [UIColor colorWithWhite:0 alpha: 0.5].CGColor;
     textView.layer.borderWidth = 2.0;
