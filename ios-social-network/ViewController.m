@@ -11,6 +11,8 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *tweetTextView;
+@property (weak, nonatomic) IBOutlet UITextView *facebookTextView;
+@property (weak, nonatomic) IBOutlet UITextView *moreTextView;
 
 - (void) configureTweetTextView;
 - (void) showAlertMessage: (NSString *) myMessage;

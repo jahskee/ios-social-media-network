@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XzJ-vR-g2b">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="action" id="XAf-4z-amI">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -48,25 +48,28 @@
                                 </items>
                                 <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </toolbar>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RlF-zd-Vac">
-                                <rect key="frame" x="10" y="83" width="355" height="132"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RlF-zd-Vac">
+                                <rect key="frame" x="10" y="87" width="394" height="113"/>
                                 <color key="backgroundColor" red="0.62854787713264915" green="0.9272962260188673" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="126" id="fyS-KC-pif"/>
+                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HI7-HU-1C6">
-                                <rect key="frame" x="10" y="234" width="355" height="132"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HI7-HU-1C6">
+                                <rect key="frame" x="10" y="234" width="394" height="120"/>
                                 <color key="backgroundColor" red="0.62854787710000004" green="0.92729622599999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="138" id="iBG-i9-Mgg"/>
+                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NKs-IR-kuD">
-                                <rect key="frame" x="10" y="390" width="355" height="132"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NKs-IR-kuD">
+                                <rect key="frame" x="10" y="396" width="394" height="119"/>
                                 <color key="backgroundColor" red="0.62854787710000004" green="0.92729622599999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -75,19 +78,31 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="XzJ-vR-g2b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LXi-Gg-wgQ"/>
-                            <constraint firstItem="XzJ-vR-g2b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kAd-zx-bsp"/>
-                            <constraint firstAttribute="trailing" secondItem="XzJ-vR-g2b" secondAttribute="trailing" id="r02-kZ-JL0"/>
+                            <constraint firstItem="RlF-zd-Vac" firstAttribute="top" secondItem="XzJ-vR-g2b" secondAttribute="bottom" constant="23" id="4CT-ef-zc8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NKs-IR-kuD" secondAttribute="bottom" constant="194" id="6es-0p-l5D"/>
+                            <constraint firstAttribute="trailing" secondItem="XzJ-vR-g2b" secondAttribute="trailing" id="8vn-pk-fbl"/>
+                            <constraint firstItem="RlF-zd-Vac" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Blh-lm-VeM"/>
+                            <constraint firstItem="XzJ-vR-g2b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MS3-75-jnn"/>
+                            <constraint firstItem="HI7-HU-1C6" firstAttribute="leading" secondItem="NKs-IR-kuD" secondAttribute="leading" id="T5r-2V-5Wf"/>
+                            <constraint firstItem="RlF-zd-Vac" firstAttribute="trailing" secondItem="HI7-HU-1C6" secondAttribute="trailing" id="ZZx-Of-eOW"/>
+                            <constraint firstItem="XzJ-vR-g2b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bjU-ce-k11"/>
+                            <constraint firstItem="NKs-IR-kuD" firstAttribute="top" secondItem="HI7-HU-1C6" secondAttribute="bottom" constant="24" id="dF0-Xk-VBb"/>
+                            <constraint firstItem="RlF-zd-Vac" firstAttribute="leading" secondItem="HI7-HU-1C6" secondAttribute="leading" id="mwe-dg-iKK"/>
+                            <constraint firstItem="HI7-HU-1C6" firstAttribute="top" secondItem="RlF-zd-Vac" secondAttribute="bottom" constant="21" id="qMs-cY-BoO"/>
+                            <constraint firstItem="HI7-HU-1C6" firstAttribute="trailing" secondItem="NKs-IR-kuD" secondAttribute="trailing" id="rfV-aY-Nbp"/>
+                            <constraint firstItem="RlF-zd-Vac" firstAttribute="centerX" secondItem="XzJ-vR-g2b" secondAttribute="centerX" id="zA9-1Q-Atv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="facebookTextView" destination="HI7-HU-1C6" id="ZXD-qn-BX6"/>
+                        <outlet property="moreTextView" destination="NKs-IR-kuD" id="b4U-YX-Xg1"/>
                         <outlet property="tweetTextView" destination="RlF-zd-Vac" id="cQK-L1-JqF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-626.39999999999998" y="22.938530734632685"/>
+            <point key="canvasLocation" x="-626.39999999999998" y="22.906403940886701"/>
         </scene>
     </scenes>
 </document>
