@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *facebookTextView;
 @property (weak, nonatomic) IBOutlet UITextView *moreTextView;
 
-- (void) configureTweetTextView;
+- (void) configureTweetTextView: (UITextView *) textView;
 - (void) showAlertMessage: (NSString *) myMessage;
 @end
 
@@ -23,7 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self configureTweetTextView];
+    [self configureTweetTextView: self.tweetTextView];
+    [self configureTweetTextView: self.facebookTextView];
+    [self configureTweetTextView: self.moreTextView];
 }
 
 - (void) showAlertMessage: (NSString *) myMessage {
@@ -77,10 +79,10 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
-- (void) configureTweetTextView {
-    self.tweetTextView.layer.backgroundColor = [UIColor colorWithRed: 1.0 green:1.0 blue:0.9 alpha:1.0].CGColor;
-    self.tweetTextView.layer.cornerRadius = 10.0;
-    self.tweetTextView.layer.borderColor = [UIColor colorWithWhite:0 alpha: 0.5].CGColor;
-    self.tweetTextView.layer.borderWidth = 2.0;
+- (void) configureTweetTextView: (UITextView *) textView {
+    textView.layer.backgroundColor = [UIColor colorWithRed: 1.0 green:1.0 blue:0.9 alpha:1.0].CGColor;
+    textView.layer.cornerRadius = 10.0;
+    textView.layer.borderColor = [UIColor colorWithWhite:0 alpha: 0.5].CGColor;
+    textView.layer.borderWidth = 2.0;
 }
 @end
