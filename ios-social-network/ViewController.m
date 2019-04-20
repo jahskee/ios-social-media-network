@@ -36,67 +36,45 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
-- (IBAction)showShareAction:(id)sender {
-    if ([self.tweetTextView isFirstResponder] ) {
-        [self.tweetTextView resignFirstResponder];
+- (IBAction)postToTweeter:(id)sender {
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+        // Tweet out the tweet
+        SLComposeViewController *twitterVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        
+        if ( [self.tweetTextView.text length] < 140) {
+            [twitterVC setInitialText:self.tweetTextView.text];
+        } else {
+            NSString *shortText = [self.tweetTextView.text substringToIndex:140];
+            [twitterVC setInitialText: shortText];
+        }
+        
+        [self presentViewController:twitterVC animated:YES completion:nil];
+    } else {
+        // Raise some kind of objection
+        [self showAlertMessage:@"Please sign in to twitter before you tweet"];
     }
-    // define alert dialog box
-    UIAlertController *actionController = [UIAlertController
-        alertControllerWithTitle: @"Share"
-        message: @""
-        preferredStyle: UIAlertControllerStyleAlert];
+}
+- (IBAction)postToFacebook:(id)sender {
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+        SLComposeViewController *facebookVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        [facebookVC setInitialText:self.tweetTextView.text];
+        [self presentViewController:facebookVC animated:YES completion:nil];
+        
+    } else {
+        [self showAlertMessage:@"Please sign in to Facebook"];
+    }
+}
+- (IBAction)postMore:(id)sender {
+    UIActivityViewController *moreVC = [[UIActivityViewController alloc] initWithActivityItems:@[self.tweetTextView.text] applicationActivities:nil];
+    [self presentViewController:moreVC animated:YES completion:nil];
+}
+- (IBAction)doNothing:(id)sender {
+    UIAlertController *alertController;
+    alertController = [UIAlertController alertControllerWithTitle:@"SocialShare" message:@"This doesn't do anything" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Okay" style: UIAlertActionStyleDefault handler: nil];
+    [alertController addAction: okAction];
     
-    // define alert cancel button
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil];
-    [actionController addAction:cancelAction];
-    
-    // define alert tweet button
-    UIAlertAction *tweetAction = [UIAlertAction actionWithTitle:@"Tweet" style:UIAlertActionStyleDefault
-                                    handler:^(UIAlertAction *action){
-                                        if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
-                                            // Tweet out the tweet
-                                            SLComposeViewController *twitterVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-                                            
-                                            if ( [self.tweetTextView.text length] < 140) {
-                                                [twitterVC setInitialText:self.tweetTextView.text];
-                                            } else {
-                                                NSString *shortText = [self.tweetTextView.text substringToIndex:140];
-                                                [twitterVC setInitialText: shortText];
-                                            }
-                                            
-                                            [self presentViewController:twitterVC animated:YES completion:nil];
-                                        } else {
-                                            // Raise some kind of objection
-                                            [self showAlertMessage:@"Please sign in to twitter before you tweet"];
-                                        }
-                                    }];
-    
-    UIAlertAction *facebookAction = [UIAlertAction actionWithTitle:@"Post to Facebook" style:UIAlertActionStyleDefault
-                                handler:^(UIAlertAction *action){
-                                    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
-                                        SLComposeViewController *facebookVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-                                        [facebookVC setInitialText:self.tweetTextView.text];
-                                        [self presentViewController:facebookVC animated:YES completion:nil];
-                                        
-                                     } else {
-                                         [self showAlertMessage:@"Please sign in to Facebook"];
-                                     }
-                                }];
- 
-    
-    UIAlertAction *moreAction = [UIAlertAction actionWithTitle:@"More" style:UIAlertActionStyleDefault
-                               handler:^(UIAlertAction *action){
-                                   UIActivityViewController *moreVC = [[UIActivityViewController alloc]
-                                   initWithActivityItems:@[self.tweetTextView.text] applicationActivities:nil];
-                                   [self presentViewController:moreVC animated:YES completion:nil];
-                               }];
-    // add buttons to alert dialog box
-    [actionController addAction:tweetAction];
-    [actionController addAction:facebookAction];
-    [actionController addAction:moreAction];
-     [actionController addAction:cancelAction];
-    // display the alert dialog box
-    [self presentViewController: actionController animated: YES completion: nil];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void) configureTweetTextView {
