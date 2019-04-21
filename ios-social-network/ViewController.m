@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *facebookTextView;
 @property (weak, nonatomic) IBOutlet UITextView *moreTextView;
 
-- (void) configureTweetTextView: (UITextView *) textView;
+- (void) configureTextView: (UITextView *) textView withColor1:(float)color1 withColor2:(float)color2 withColor3:(float)color3;
 - (void) showAlertMessage: (NSString *) myMessage;
 @end
 
@@ -23,9 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self configureTweetTextView: self.tweetTextView color1:1.0 color2:1.0 color3:0.9];
-    [self configureTweetTextView: self.facebookTextView color1:1.0 color2:0.9 color3:1.0];
-    [self configureTweetTextView: self.moreTextView color1:0.9 color2:1.0 color3:1.0];
+    [self configureTextView: self.tweetTextView withColor1:1.0 withColor2:1.0 withColor3:0.9];
+    [self configureTextView: self.facebookTextView withColor1:1.0 withColor2:0.9 withColor3:1.0];
+    [self configureTextView: self.moreTextView withColor1:0.9 withColor2:1.0 withColor3:1.0];
 }
 
 - (void) showAlertMessage: (NSString *) myMessage {
@@ -79,7 +79,7 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
-- (void) configureTweetTextView: (UITextView *) textView color1:(float)color1 color2: (float)color2 color3:(float)color3{
+- (void) configureTextView: (UITextView *) textView withColor1:(float)color1 withColor2: (float)color2 withColor3:(float)color3{
     textView.layer.backgroundColor = [UIColor colorWithRed: color1 green:color2 blue:color3 alpha:1.0].CGColor;
     textView.layer.cornerRadius = 10.0;
     textView.layer.borderColor = [UIColor colorWithWhite:0 alpha: 0.5].CGColor;

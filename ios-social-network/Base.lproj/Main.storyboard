@@ -57,18 +57,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="This is a message for More." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NKs-IR-kuD">
+                                <rect key="frame" x="10" y="396" width="394" height="146"/>
+                                <color key="backgroundColor" red="0.62854787710000004" green="0.92729622599999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="This is a message for Facebook." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HI7-HU-1C6">
                                 <rect key="frame" x="10" y="234" width="394" height="138"/>
                                 <color key="backgroundColor" red="0.62854787710000004" green="0.92729622599999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="138" id="iBG-i9-Mgg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="This is a message for More." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NKs-IR-kuD">
-                                <rect key="frame" x="10" y="396" width="394" height="146"/>
-                                <color key="backgroundColor" red="0.62854787710000004" green="0.92729622599999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -99,7 +99,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-535" y="-49"/>
+            <point key="canvasLocation" x="-780" y="-51"/>
         </scene>
     </scenes>
 </document>
